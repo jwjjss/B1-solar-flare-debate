@@ -1,0 +1,17 @@
+# B-1 项目全局配置（W0 起抽出，后期调优只改这里，不必翻代码）
+# 所有可调参数集中于此，对应《飞书-分工与进度跟踪.md》第八节。
+
+debate:
+  max_rounds: 8            # GroupChat 最大轮次，防跑偏/停不下来
+  rounds: 2                # 每个角色发言轮数（mock/LLM 通用）
+  confidence_threshold: 0.5  # 因果边置信度阈值
+
+model:
+  reasoning_model: qwen-plus    # 辩论推理用；重任务可换 qwen-max
+  vision_model: qwen-vl-max     # Qwen-VL 读 FITS 磁场图（邹智林多模态必做）
+  use_sft_model: false          # W5-W6 接入 SFT 微调模型后改 true
+  sft_model: qwen-plus          # SFT 微调后的模型名（吴宜俊造数据 + 高焕景百炼微调）
+  base_url: https://llm-wh1a8s252aj0nwjy.cn-beijing.maas.aliyuncs.com/compatible-mode/v1
+
+flags:
+  use_vl: false   # W5-W6 邹智林接入 Qwen-VL 后改 true

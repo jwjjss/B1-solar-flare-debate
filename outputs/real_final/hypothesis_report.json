@@ -1,0 +1,19 @@
+{
+  "problem_statement": "哪些可观测前兆能稳定预测太阳耀斑爆发？这些前兆之间的因果链如何？",
+  "rationale": "耀斑爆发深刻影响近地空间环境与卫星通信，但触发机制尚未完全厘清。传统方法依赖单一模型拟合，难以揭示多因素间的因果链条。本研究通过多智能体辩论系统，整合文献证据与观测统计，系统发掘耀斑触发的可验证因果假设。",
+  "technical_details": "发现以下因果链：\n  • Emerging magnetic flux interacting with overlying loop system → 耀斑爆发（直接触发, conf=0.508）\n  • magnetic reconnection → 耀斑爆发（enables, conf=0.437）\n\n主因结论：主前兆为 Emerging magnetic flux interacting with overlying loop system（辩论共识 + 数据支撑最强：corr=0.508, p=0.0, n=72）",
+  "datasets": "JW-FD（太阳耀斑预报，94 样本 × 29 特征，多时间窗口耀斑等级标签）",
+  "source": "arXiv 太阳物理文献抽取 + JW-FD 观测数据统计关联",
+  "target": "输出可验证的耀斑触发前兆因果链图谱与科学假设报告",
+  "paper_title": "A Multi-Agent Debate Framework for Discovering Solar Flare Precursor Causal Chains",
+  "abstract": "本文提出一种基于多智能体辩论的科学假设生成系统，自动整合太阳物理文献与 JW-FD 观测数据集，通过物理学家-质疑者-方法论审查三角色的结构化辩论，发现耀斑触发的可验证前兆因果链。三角色（物理学家/质疑者/方法论审查）经过 3 轮结构化辩论，通过假设-证伪-审查范式收敛出因果共识。",
+  "methods": "系统由 5 个模块组成：\n1) 文献 Agent：从 arXiv 检索太阳耀斑相关论文，抽取前兆候选因素\n2) 数据证据 Agent：在 JW-FD 数据集上对每个因素做统计关联分析（相关性、p值、时序）\n3) 辩论调度器：三角色（物理学家/质疑者/方法论审查）进行多轮结构化辩论\n4) 因果图谱构建：从辩论共识中提取因果关系，构建链式因果图\n5) 假设生成器：综合所有证据输出 11 字段标准科学假设报告",
+  "experiments": "在 JW-FD 数据集上对 4 个候选前兆因素做相关性分析和 p 值检验（显著水平 α=0.05），结果作为辩论证据输入。同时引入 2 个被挑战因素作为反例验证。",
+  "results": "Emerging magnetic flux interacting with overlying loop system 被识别为显著前兆（corr=0.508, p=0.0, n=72）；magnetic reconnection 被识别为显著前兆（corr=0.729, p=0.0, n=72）；Free energy peak prior to flare 经质疑者挑战后被降级（corr=0.129, p=0.2136，反例32个，可能为伴随现象）；Motion of microwave sources toward and away from magnetic neutral line 经质疑者挑战后被降级（corr=0.129, p=0.2136，反例32个，可能为伴随现象）\n\n三角色（物理学家/质疑者/方法论审查）经过 3 轮结构化辩论，通过假设-证伪-审查范式收敛出因果共识。",
+  "references": [
+    "arXiv:2506.13022",
+    "arXiv:1506.08035",
+    "arXiv:2001.06048",
+    "arXiv:1609.02256"
+  ]
+}

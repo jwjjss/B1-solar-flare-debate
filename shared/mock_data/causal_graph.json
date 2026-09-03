@@ -1,0 +1,15 @@
+{
+  "nodes": [
+    {"id": "F1", "label": "磁通量绳形成", "ntype": "precursor"},
+    {"id": "F2", "label": "光球剪切运动增强", "ntype": "mechanism"},
+    {"id": "E0", "label": "自由磁能积累", "ntype": "mechanism"},
+    {"id": "E1", "label": "耀斑爆发", "ntype": "event"}
+  ],
+  "edges": [
+    {"src": "F2", "dst": "E0", "relation": "enables", "confidence": 0.71, "evidence_ref": "F2"},
+    {"src": "E0", "dst": "F1", "relation": "enables", "confidence": 0.80, "evidence_ref": "F1"},
+    {"src": "F1", "dst": "E1", "relation": "triggers", "confidence": 0.63, "evidence_ref": "F1"}
+  ],
+  "root_cause": "光球剪切运动持续注入自由磁能，促成磁通量绳形成，是耀斑触发的主因链",
+  "debate_rounds": 2
+}

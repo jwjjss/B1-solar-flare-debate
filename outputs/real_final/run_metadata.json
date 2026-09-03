@@ -1,0 +1,14 @@
+{
+  "task_id": "XH-202619-B1",
+  "query": "太阳耀斑触发前兆因果链发现",
+  "mode": "real",
+  "data_root": "C:\\Users\\jwjjs\\Downloads\\挑战杯",
+  "artifacts": [
+    "literature_facts.json",
+    "evidence_report.json",
+    "transcript.json",
+    "causal_graph.json",
+    "hypothesis_report.json"
+  ],
+  "rebuild_note": "v2: 修复 causal_graph_builder 边置信度公式(1-p→|r|)、root_cause 排序键(literature conf→data corr)、debate_rounds(len→max round)、ntype(硬编码→f.ftype)、hypothesis_generator 特征数(55→实际)、_extract_block 兼容 ---END_CLAIMS--- 别名。基于 v1 的 transcript/evidence/facts 本地重建，未重跑 Qwen/arXiv。"
+}

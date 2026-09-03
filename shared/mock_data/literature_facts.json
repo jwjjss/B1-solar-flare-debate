@@ -1,0 +1,30 @@
+{
+  "query": "太阳耀斑触发前兆",
+  "papers_searched": 12,
+  "factors": [
+    {
+      "id": "F1",
+      "name": "磁通量绳形成",
+      "description": "活动区光球层出现扭曲的磁通量绳结构，是耀斑/日冕物质抛射的核心前兆",
+      "source": "arXiv:1403.2391",
+      "confidence": 0.82,
+      "ftype": "precursor"
+    },
+    {
+      "id": "F2",
+      "name": "光球剪切运动增强",
+      "description": "磁场中性线两侧物质的持续剪切运动持续注入自由磁能",
+      "source": "arXiv:1206.1415",
+      "confidence": 0.74,
+      "ftype": "mechanism"
+    },
+    {
+      "id": "F3",
+      "name": "紫外 1600Å 辐射异常上升",
+      "description": "爆发前数分钟至数十分钟， transitional region 在 1600Å 波段出现增亮",
+      "source": "arXiv:1705.08904",
+      "confidence": 0.61,
+      "ftype": "precursor"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+# Streamlit 全局配置（Community Cloud 从仓库根目录 .streamlit/config.toml 读取）
+# 主题配色与前端三角色/图谱配色呼应，整体走深色科技风，评委观感统一。
+
+[theme]
+base = "light"
+primaryColor = "#1f77b4"           # 物理学家蓝，作为主强调色
+backgroundColor = "#ffffff"
+secondaryBackgroundColor = "#f0f2f6"
+textColor = "#1a1a2e"
+font = "sans serif"
+
+[browser]
+gatherUsageStats = false           # 关闭匿名统计上报，避免云端多余外联
+
+[server]
+headless = true                    # 无头运行（云端必需）
+enableCORS = false
+enableXsrfProtection = true
+
+[runner]
+fastReruns = true

@@ -1,0 +1,33 @@
+# 编辑器配置文件
+.vscode/
+
+# 大文件 / 数据集（禁止入库）
+data/
+*.zip
+*.rar
+*.fits
+*.csv
+JW-FD*
+JW-SSD*
+literature/vector_db/
+literature/chroma_db/
+
+# 密钥 / 环境变量
+.env
+*.key
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# 输出产物（默认忽略，但放行真实运行产物 JSON 供 Streamlit Community Cloud 展示真实数据）
+# 注意：git 不会进入被整体忽略的目录，必须先放行目录层再放行文件层
+outputs/*
+!outputs/real_final/
+outputs/real_final/*
+!outputs/real_final/*.json
+
+# 文件/文件夹标注（配置文件）
+folder-alias.json

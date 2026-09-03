@@ -1,0 +1,38 @@
+{
+  "query": "solar flare magnetic flux emergence precursor; solar flare magnetic reconnection mechanism; solar flare non potential magnetic field condition",
+  "papers_searched": 15,
+  "factors": [
+    {
+      "id": "F1",
+      "name": "Free energy peak prior to flare",
+      "description": "The free energy peaks approximately 1.5 days before the onset of the X5.7 solar flare in NOAA 9077, as quantified from NLFFF extrapolations of vector magnetograms; this temporal precursor signature is explicitly identified and statistically anchored in the analysis of non-potential magnetic field evolution.",
+      "source": "arXiv:2506.13022",
+      "confidence": 0.92,
+      "ftype": "precursor"
+    },
+    {
+      "id": "F2",
+      "name": "Emerging magnetic flux interacting with overlying loop system",
+      "description": "The paper identifies flux emergence in front of the leading sunspot of NOAA 11515 as the trigger of the eruptive flare; crucially, this emerging flux did not follow standard reconnection conditions (e.g., opposite polarity or proximity to the polarity inversion line), but instead interacted with a pre-existing loop system rooted in the trailing active region and passing over the emergence site—reconnection between the emerging flux and this loop system produced jets, induced a confined rise of the loop system, lifted the inter-region arcade, and thereby weakened downward tension, destabilizing the highly sheared flux underneath.",
+      "source": "arXiv:1506.08035",
+      "confidence": 0.92,
+      "ftype": "precursor"
+    },
+    {
+      "id": "F3",
+      "name": "magnetic reconnection",
+      "description": "The paper reports in-situ detection of 21 magnetic reconnection exhausts in current sheets observed by Parker Solar Probe during Encounter 1, particularly within heliospheric current sheets, coronal mass ejections, and regular solar wind; it further analyzes conditions favoring reconnection, identifying velocity shear relative to Alfvén velocity as a key discriminant (median 24% for reconnection exhausts vs. 71% for non-reconnecting Alfvénic current sheets).",
+      "source": "arXiv:2001.06048",
+      "confidence": 0.95,
+      "ftype": "mechanism"
+    },
+    {
+      "id": "F7",
+      "name": "Motion of microwave sources toward and away from magnetic neutral line",
+      "description": "The paper reports that non-thermal microwave sources at 5.7 GHz—reaching brightness temperatures up to ~250 MK—were observed to first move toward each other nearly along the magnetic neutral line (from the weaker-field periphery toward the stronger-field core), then move apart like expanding ribbons. This dynamic behavior is explicitly stated to rule out a single-flaring-loop interpretation and is tied to the main M7.1 flare responsible for GLE63; such motion is interpreted as observational evidence of magnetic reconnection-driven energy release in evolving current sheets or separating ribbons.",
+      "source": "arXiv:1609.02256",
+      "confidence": 0.92,
+      "ftype": "precursor"
+    }
+  ]
+}

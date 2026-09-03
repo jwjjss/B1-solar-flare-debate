@@ -1,0 +1,42 @@
+{
+  "dataset": "JW-FD",
+  "evidences": [
+    {
+      "factor_id": "F1",
+      "supported": false,
+      "correlation": 0.129,
+      "p_value": 0.2136,
+      "sample_size": 94,
+      "counter_examples": 32,
+      "note": "代理特征: NL length, NL no. fragments, NL gradient-weighted length；有效样本 94/94；未达统计显著阈值 (p<0.05, |r|>0.2)"
+    },
+    {
+      "factor_id": "F2",
+      "supported": true,
+      "correlation": 0.508,
+      "p_value": 0.0,
+      "sample_size": 72,
+      "counter_examples": 21,
+      "note": "代理特征: Total unsigned flux, Total positive flux, Total signed flux；有效样本 72/94；与耀斑显著正相关"
+    },
+    {
+      "factor_id": "F3",
+      "supported": true,
+      "correlation": 0.729,
+      "p_value": 0.0,
+      "sample_size": 72,
+      "counter_examples": 4,
+      "note": "代理特征: Gradient mean, Gradient std, Gradient max；有效样本 72/94；与耀斑显著正相关"
+    },
+    {
+      "factor_id": "F7",
+      "supported": false,
+      "correlation": 0.129,
+      "p_value": 0.2136,
+      "sample_size": 94,
+      "counter_examples": 32,
+      "note": "代理特征: NL length, NL no. fragments, NL gradient-weighted length；有效样本 94/94；未达统计显著阈值 (p<0.05, |r|>0.2)"
+    }
+  ],
+  "n_features": 29
+}

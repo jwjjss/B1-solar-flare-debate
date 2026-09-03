@@ -1,0 +1,14 @@
+{
+  "problem_statement": "哪些可观测前兆能稳定预测太阳耀斑爆发，其因果链如何？",
+  "rationale": "耀斑爆发具有破坏近地空间环境的重大影响，但触发机制尚不完全清楚；多智能体辩论可系统整合文献证据与观测统计。",
+  "technical_details": "基于 JW-FD 数据集的统计证据与 arXiv 文献，由物理学家/质疑者/方法论审查三角色多轮辩论，收敛出前兆因果链。",
+  "datasets": "JW-FD（太阳耀斑预报，104 样本 × 55 特征，多时间窗口标签）",
+  "source": "arXiv 文献抽取 + JW-FD 统计关联",
+  "target": "输出可验证的耀斑触发前兆因果链与假设",
+  "paper_title": "A Multi-Agent Debate Framework for Discovering Solar Flare Precursor Causal Chains",
+  "abstract": "本文提出一种多智能体辩论系统，自动整合太阳物理文献与观测数据，发现耀斑触发的可验证前兆因果链。",
+  "methods": "文献 Agent 抽取前兆因素 → 数据 Agent 做统计证据验证 → 三角色辩论调度 → 因果图谱构建 → 假设生成。",
+  "experiments": "在 JW-FD 上对 3 个候选前兆做相关性/p 值检验，作为证据输入辩论。",
+  "results": "磁通量绳形成被识别为主前兆（corr=0.63, p=0.008）；紫外异常增亮被质疑者排除。",
+  "references": ["arXiv:1403.2391", "arXiv:1206.1415", "arXiv:1705.08904"]
+}

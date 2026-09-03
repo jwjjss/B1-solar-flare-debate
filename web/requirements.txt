@@ -1,0 +1,7 @@
+# 前端专用依赖（Streamlit Community Cloud 读取此文件，因入口在 web/app.py）
+# 前端只读 outputs/real_final 下的静态 JSON 做可视化，不调用 LLM、不联网、不跑 AutoGen/chromadb，
+# 因此这里只声明最小依赖，保证云端秒级安装、离线可复现。
+# 完整科研链路（infer.py --real：AutoGen + Qwen + arXiv + JW-FD 统计）依赖见仓库根目录 requirements.txt。
+
+streamlit>=1.63,<2.0
+pandas>=2.2

@@ -1,0 +1,28 @@
+# B-1 项目依赖
+# mock 模式（验证链路）仅需 Python 3.11 标准库，无需以下依赖
+# 真实多智能体辩论需要：
+
+# 多智能体框架（AutoGen v0.4）
+autogen-agentchat>=0.4.0
+autogen-ext[openai]>=0.4.0
+autogen-core>=0.4.0
+
+# 前端 / API（提交必选项）
+fastapi>=0.110
+uvicorn>=0.29
+streamlit>=1.35
+
+# 文献 Agent 真实模式（吴宜俊）：arxiv 检索(标准库urllib) + Qwen 抽取
+openai>=1.30
+
+# 可选：向量库（吴宜俊 文献 Agent 真实模式）
+chromadb>=0.5
+
+# 可选：数据解析（邹智林 JW-FD 真实模式）
+numpy>=1.26
+pandas>=2.2
+scipy>=1.12        # Pearson 相关/p 值
+astropy>=6.0      # FITS 解析
+
+# 配置（config.yaml 解析；缺失时自动回退默认，不影响 mock）
+pyyaml>=6.0

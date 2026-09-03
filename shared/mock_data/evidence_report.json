@@ -1,0 +1,32 @@
+{
+  "dataset": "JW-FD",
+  "evidences": [
+    {
+      "factor_id": "F1",
+      "supported": true,
+      "correlation": 0.63,
+      "p_value": 0.008,
+      "sample_size": 104,
+      "counter_examples": 3,
+      "note": "磁通量绳相关特征与 24h 内 M 级耀斑显著正相关"
+    },
+    {
+      "factor_id": "F2",
+      "supported": true,
+      "correlation": 0.51,
+      "p_value": 0.021,
+      "sample_size": 104,
+      "counter_examples": 5,
+      "note": "剪切运动强度与耀斑等级弱-中度相关"
+    },
+    {
+      "factor_id": "F3",
+      "supported": false,
+      "correlation": 0.19,
+      "p_value": 0.21,
+      "sample_size": 104,
+      "counter_examples": 14,
+      "note": "紫外异常增亮在样本中不稳定，可能为伴随而非前兆"
+    }
+  ]
+}

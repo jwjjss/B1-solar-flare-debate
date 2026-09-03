@@ -1,0 +1,61 @@
+{
+  "nodes": [
+    {
+      "id": "E1",
+      "label": "耀斑爆发",
+      "ntype": "event"
+    },
+    {
+      "id": "F2",
+      "label": "Emerging magnetic flux interacting with overlying loop system",
+      "ntype": "precursor"
+    },
+    {
+      "id": "F3",
+      "label": "magnetic reconnection",
+      "ntype": "mechanism"
+    },
+    {
+      "id": "F1",
+      "label": "Free energy peak prior to flare",
+      "ntype": "precursor"
+    },
+    {
+      "id": "F7",
+      "label": "Motion of microwave sources toward and away from magnetic neutral line",
+      "ntype": "precursor"
+    }
+  ],
+  "edges": [
+    {
+      "src": "F2",
+      "dst": "E1",
+      "relation": "triggers",
+      "confidence": 0.508,
+      "evidence_ref": "arXiv:1506.08035"
+    },
+    {
+      "src": "F3",
+      "dst": "E1",
+      "relation": "enables",
+      "confidence": 0.437,
+      "evidence_ref": "arXiv:2001.06048"
+    },
+    {
+      "src": "F1",
+      "dst": "E1",
+      "relation": "correlates",
+      "confidence": 0.1,
+      "evidence_ref": "f.challenged:arXiv:2506.13022"
+    },
+    {
+      "src": "F7",
+      "dst": "E1",
+      "relation": "correlates",
+      "confidence": 0.1,
+      "evidence_ref": "f.challenged:arXiv:1609.02256"
+    }
+  ],
+  "root_cause": "主前兆为 Emerging magnetic flux interacting with overlying loop system（辩论共识 + 数据支撑最强：corr=0.508, p=0.0, n=72）",
+  "debate_rounds": 3
+}
