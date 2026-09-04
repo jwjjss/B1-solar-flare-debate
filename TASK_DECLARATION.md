@@ -17,7 +17,7 @@
 | 所选题目编号 | **题目 1｜耀斑触发前兆因果链发现** |
 | 提交日期 | 2026-09-04 |
 | 核心方法一句话摘要 | 基于国产通义千问（Qwen）大模型 + AutoGen 多智能体辩论框架，从 arXiv 文献与 JW-FD 观测数据中自动挖掘太阳耀斑触发前兆，经"物理学家—质疑者—方法论审查"三角色结构化辩论收敛出可验证的因果链与科学假设 |
-| 代码仓库（URL + Commit） | https://github.com/jwjjss/B1-solar-flare-debate （Commit Hash: __COMMIT_HASH__） |
+| 代码仓库（URL + Commit） | https://github.com/jwjjss/B1-solar-flare-debate （Commit Hash: `db725dfbe7503cefcef6825303e9ae71d25c1ae9`） |
 | 在线可交互前端 | https://b1-solar-flare-debate.streamlit.app/ （Streamlit Community Cloud，展示真实链路产出的因果图谱与辩论全过程） |
 | 数据来源 | JW-FD 数据集（太阳耀斑预报，真实运行解析 94 样本 × 29 特征）；arXiv 公开文献（检索 15 篇） |
 | 运行环境简述 | CPU 即可运行，推理走阿里云百炼（DashScope）云端 API，无需本地 GPU；单次真实链路运行约 2–5 分钟 |
@@ -211,7 +211,7 @@
 
 | 项目 | 要求 | 当前状态 |
 |------|------|---------|
-| 代码仓库 | 完整开源 + URL + 不可变 Commit Hash | ✅ https://github.com/jwjjss/B1-solar-flare-debate ；Commit Hash: __COMMIT_HASH__ |
+| 代码仓库 | 完整开源 + URL + 不可变 Commit Hash | ✅ https://github.com/jwjjss/B1-solar-flare-debate ；Commit Hash: `db725dfbe7503cefcef6825303e9ae71d25c1ae9` |
 | 许可证 | 仓库根目录含 LICENSE | ✅ 已添加 `LICENSE`（MIT） |
 | 第三方许可证 | 单独列出 | ✅ 已添加 `third_party_licenses.md` |
 | 环境文件 | requirements.txt 钉死版本 / Dockerfile | ✅ `requirements.txt` 已按 `==` 钉死版本 |
