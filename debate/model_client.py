@@ -47,6 +47,13 @@ def get_model_client(config: dict | None = None):
     vision_model = m.get("vision_model", "qwen-vl-max")
     vision = (model == vision_model)  # 选中的模型即 VL 模型时开启视觉能力
     base_url = m.get("base_url", "https://dashscope.aliyuncs.com/compatible-mode/v1")
+    # Qwen3 系列（含百炼部署的微调模型）非流式调用必须显式关闭思考模式，否则 dashscope 报
+    # "parameter.enable_thinking must be set to false for non-streaming calls"。
+    # AutoGen 的 OpenAIChatCompletionClient 会把构造期的 extra_body 合并进每次 create() 调用。
+    # 仅在使用 SFT/微调模型或 qwen3 家族时注入，避免影响 qwen-plus 等既有路径（文献 Agent）。
+    extra_kwargs: dict = {}
+    if use_sft or str(model).startswith("qwen3"):
+        extra_kwargs["extra_body"] = {"enable_thinking": False}
     try:
         from autogen_ext.models.openai import OpenAIChatCompletionClient
         return OpenAIChatCompletionClient(
@@ -60,6 +67,7 @@ def get_model_client(config: dict | None = None):
                 "structured_output": True,
                 "family": "qwen",
             },
+            **extra_kwargs,
         )
     except Exception as e:  # pragma: no cover
         print(f"[warn] 无法初始化 Qwen 客户端: {e}，回退 mock 模式")

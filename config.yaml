@@ -7,11 +7,18 @@ debate:
   confidence_threshold: 0.5  # 因果边置信度阈值
 
 model:
-  reasoning_model: qwen-plus    # 辩论推理用；重任务可换 qwen-max
+  reasoning_model: qwen-plus    # 默认辩论/假设模型（国产通义千问）；文献 Agent 恒用此模型
   vision_model: qwen-vl-max     # Qwen-VL 读 FITS 磁场图（邹智林多模态必做）
-  use_sft_model: false          # W5-W6 接入 SFT 微调模型后改 true
-  sft_model: qwen-plus          # SFT 微调后的模型名（吴宜俊造数据 + 高焕景百炼微调）
-  base_url: https://llm-wh1a8s252aj0nwjy.cn-beijing.maas.aliyuncs.com/compatible-mode/v1
+  # ── 自研微调模型（团队在百炼微调 + 部署，状态 RUNNING）──────────────────────
+  # 已验证：把 use_sft_model 改 true，辩论+假设生成即切到微调模型，可端到端跑通
+  # （产物见 outputs/real_ft）。核验结论：4B 通用微调模型在辩论收敛/结构化输出上
+  # 弱于 qwen-plus（9 轮未收敛、accepted_factors 为空、根因回退到裸相关），
+  # 故默认仍用 qwen-plus 产出主案例 real_final；微调模型作为"自研模型可跑通"的验证。
+  use_sft_model: false          # 改 true 即启用下方微调模型（辩论+假设阶段）
+  # 调用用部署返回的 deployed_model id，不是训练产出的 -ft- 任务 id
+  sft_model: qwen3-4b-instruct-2507-0029db914616   # base=qwen3-4b-instruct-2507，plan=lora 按量计费
+  # 微调模型与 qwen-plus 均走标准 dashscope 兼容端点（专属 maas 端点对当前 key 无权限）
+  base_url: https://dashscope.aliyuncs.com/compatible-mode/v1
 
 flags:
   use_vl: false   # W5-W6 邹智林接入 Qwen-VL 后改 true

@@ -1,28 +1,35 @@
-# B-1 项目依赖
-# mock 模式（验证链路）仅需 Python 3.11 标准库，无需以下依赖
-# 真实多智能体辩论需要：
+# B-1 项目依赖（版本已钉死，对应提交 Commit 快照）
+#
+# - mock 模式（验证链路）仅需 Python 3.11+ 标准库，无需安装以下依赖：python run_demo.py
+# - 真实多智能体辩论 / 复现核心科学输出需安装下列依赖：
+#     python -m pip install -r requirements.txt
+#
+# 运行环境：Python 3.13（3.11+ 兼容）；CPU 即可运行，推理走阿里云百炼云端 API，无需本地 GPU。
 
-# 多智能体框架（AutoGen v0.4）
-autogen-agentchat>=0.4.0
-autogen-ext[openai]>=0.4.0
-autogen-core>=0.4.0
+# ── 多智能体辩论框架（AutoGen v0.7）──
+autogen-agentchat==0.7.5
+autogen-core==0.7.5
+autogen-ext[openai]==0.7.5
 
-# 前端 / API（提交必选项）
-fastapi>=0.110
-uvicorn>=0.29
-streamlit>=1.35
+# ── 大模型 API 客户端（对接百炼 DashScope 兼容模式）──
+openai==2.45.0
 
-# 文献 Agent 真实模式（吴宜俊）：arxiv 检索(标准库urllib) + Qwen 抽取
-openai>=1.30
+# ── 前端 / API（可交互面板 + 可调用测试接口）──
+streamlit==1.63.0
+fastapi==0.136.1
+uvicorn==0.47.0
 
-# 可选：向量库（吴宜俊 文献 Agent 真实模式）
-chromadb>=0.5
+# ── 文献 Agent 真实模式：arXiv 检索(标准库 urllib) + 向量库 ──
+chromadb==1.5.9
 
-# 可选：数据解析（邹智林 JW-FD 真实模式）
-numpy>=1.26
-pandas>=2.2
-scipy>=1.12        # Pearson 相关/p 值
-astropy>=6.0      # FITS 解析
+# ── 数据证据 Agent：JW-FD 解析与统计关联分析 ──
+numpy==2.4.6
+pandas==3.0.3
+scipy==1.18.0        # Pearson 相关 / p 值检验
 
-# 配置（config.yaml 解析；缺失时自动回退默认，不影响 mock）
-pyyaml>=6.0
+# ── 配置解析（config.yaml；缺失时自动回退默认，不影响 mock）──
+PyYAML==6.0.3
+
+# ── 可选（如需 FITS 科学图像解析；核心 CSV 统计链路不依赖）──
+# astropy>=6.0
+# graphviz>=0.20     # 因果图谱可视化（前端亦可用 st.graphviz_chart 渲染 DOT 字符串）

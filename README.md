@@ -1,8 +1,9 @@
 # 挑战杯 · B-1 耀斑触发前兆因果链发现
 
-> 赛道一 方向2 选题B · B-1 | 截止 2026-09-05 | 仓库 https://gitee.com/sdbksdbsk/challenge-cup
+> 赛道一 方向 B（方向2B）太阳物理假设生成与证据推理 · 题目 1｜耀斑触发前兆因果链发现
+> 仓库 https://github.com/jwjjss/B1-solar-flare-debate ｜ 在线可交互前端 https://b1-solar-flare-debate.streamlit.app/
 >
-> 用多智能体系统自动发现「太阳耀斑触发前兆因果链」并输出可验证科学假设。**无需物理实验**，系统的"实验"就是多智能体辩论过程本身。
+> 用多智能体系统自动发现「太阳耀斑触发前兆因果链」并输出可验证科学假设。**无需物理实验**，系统的"实验"就是多智能体辩论过程本身。作品正文见 `TASK_DECLARATION.md`。
 
 ---
 
@@ -42,6 +43,39 @@ outputs/
 ```bash
 python -m pytest tests/ -v
 ```
+
+---
+
+## 一键复现核心科学输出
+
+本仓库的核心科学输出（候选假设 + 证据链 + 因果图谱 + 辩论记录）可一键复现。已在 `outputs/real_final/` 内附带一份**真实运行**的完整示例输出，评委无需 API Key 即可直接查阅。
+
+**方式 A：无密钥快速验证全链路（mock，CPU-only，< 10 秒）**
+
+```bash
+python run_demo.py
+```
+
+**方式 B：复现真实科学输出（需百炼 API Key，CPU-only，约 2–5 分钟）**
+
+```bash
+# 1. 配置密钥（仅环境变量，切勿硬编码）
+export DASHSCOPE_API_KEY="sk-xxxxxxxx"        # Linux/macOS
+# set DASHSCOPE_API_KEY=sk-xxxxxxxx           # Windows cmd
+# $env:DASHSCOPE_API_KEY="sk-xxxxxxxx"        # Windows PowerShell
+
+# 2. 指定 JW-FD 数据目录（含 JW-FD*.zip 或其解压目录），运行真实链路
+python infer.py --real \
+  --data_root /path/to/JW-FD \
+  --query "太阳耀斑触发前兆因果链发现" \
+  --out outputs/reproduce
+```
+
+运行结束后，`outputs/reproduce/` 将生成 6 份产物：`literature_facts.json`（前兆因子）、`evidence_report.json`（统计证据 + 反例）、`transcript.json`（三角色辩论全过程）、`causal_graph.json`（因果图谱）、`hypothesis_report.json`（12 字段科学假设报告）、`run_metadata.json`（运行元信息）。
+
+**前端查看**：`cd web && streamlit run app.py`，或直接访问已部署的公网前端 https://b1-solar-flare-debate.streamlit.app/ 。
+
+> 硬件与时间：CPU-only 可完整复现，无需本地 GPU（推理走阿里云百炼云端 API）。mock < 10 秒；真实模式约 2–5 分钟，取决于 API 响应速度。
 
 ---
 
